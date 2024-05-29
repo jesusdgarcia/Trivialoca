@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LaTriviaLoca.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            VerticalOptions="Center">
+            <Border StrokeThickness="0"
+                    Padding="20"
+                    HorizontalOptions="Center">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20,20,20,20" />
+                </Border.StrokeShape>
+                    <Image
+                        Source="ocaa.png"
+                        HeightRequest="200"
+                        HorizontalOptions="Center" />
+            </Border>
+            <Label 
+                x:Name="lblTitulo"
+                Text="Trivialoca"
+                FontAttributes="Bold"
+                FontSize="32"
+                Padding="0,0,0,20"
+                HorizontalOptions="Center" />
+            <Button 
+                x:Name="btnFacil"
+                Style="{DynamicResource botonVerdeStyle}"
+                Clicked="OnClick"
+                Text="Easy"/>
+
+            <Button 
+                x:Name="btnMedio"
+                Style="{DynamicResource botonAmarilloStyle}"
+                Clicked="OnClick"
+                Text="Medium"/>
+            <Button 
+                x:Name="btnDificil"
+                Style="{DynamicResource botonRojoStyle}"
+                Clicked="OnClick"
+                Text="Hard"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LaTriviaLoca.Views.TableroPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:model="clr-namespace:LaTriviaLoca.Model"
+             xmlns:local="clr-namespace:LaTriviaLoca.Converters"
+             Title="Game board">
+    <ContentPage.Resources>
+        <local:clsConvertirAColor x:Key="StringToColor"/>
+    </ContentPage.Resources>
+    <StackLayout>
+        <!--<Label 
+            Text="Throw the dice to move the goose through the board"
+            FontAttributes="Bold"
+            FontSize="20"
+            Padding="10"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            HorizontalTextAlignment="Center"/>-->
+        <HorizontalStackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Padding="10">
+            <Label
+            Text="Score: "
+            FontAttributes="Bold"
+            FontSize="20"
+            HorizontalTextAlignment="Center"/>
+            <Label
+            Text="{Binding Score}"
+            FontAttributes="Bold"
+            Margin="5,0,0,0"
+            FontSize="20"
+            HorizontalTextAlignment="Center"/>
+
+        </HorizontalStackLayout>
+        <VerticalStackLayout
+            Padding="10">
+            <CollectionView ItemsLayout="VerticalGrid,  5"
+                    ItemsSource="{Binding ListadoCasillaMostrado}"
+                    SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image 
+                                Source="{Binding SrcImgJugador}"
+                                BackgroundColor = "{Binding ColorCasilla, Converter={StaticResource StringToColor}, ConverterParameter=AnyStringHere}"
+                                WidthRequest="{OnPlatform WinUI=100, Android=74}"
+                                HeightRequest="{OnPlatform WinUI=100, Android=74}"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+        <ImageButton Source="{Binding SrcImgButtom}"
+                     HorizontalOptions="Center"
+                     WidthRequest="{OnPlatform WinUI=100, Android=75}"
+                     HeightRequest="{OnPlatform WinUI=100, Android=75}"
+                     VerticalOptions="Center"
+                     Command="{Binding TirarDadoCommand}"/>
+    </StackLayout>
+
+</ContentPage>

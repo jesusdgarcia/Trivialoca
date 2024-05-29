@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LaTriviaLoca.Resources.Styles.TrivialocaStyle">
+
+    <!--Creamos los colores de los botones-->
+    <Color x:Key="verde">#C1FEE1</Color>
+    <Color x:Key="amarillo">#FFEFAE</Color>
+    <Color x:Key="rojo">#FFC8C8</Color>
+
+    <!--Le damos un estilo a cada botón-->
+    <Style TargetType="Button" x:Key="botonVerdeStyle">
+        <Setter Property="BackgroundColor" Value="{StaticResource verde}"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="Padding" Value="35, 10, 35, 10"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="botonRojoStyle">
+        <Setter Property="BackgroundColor" Value="{StaticResource rojo}"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="Padding" Value="35, 10, 35, 10"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="botonAmarilloStyle">
+        <Setter Property="BackgroundColor" Value="{StaticResource amarillo}"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="Padding" Value="35, 10, 35, 10"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+</ResourceDictionary>
